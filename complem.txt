@@ -1,0 +1,124 @@
+q0  ___ ___ *** halt-accept
+q0  Q__ Q_Q r*r q1
+q0  *** *** *** halt-reject
+
+
+q1  0__ 0k0 rrr q1
+q1  1__ 1k1 rrr q1
+q1  2__ 2k2 rrr q1
+q1  3__ 3k3 rrr q1
+q1  4__ 4k4 rrr q1
+q1  5__ 5k5 rrr q1
+q1  6__ 6k6 rrr q1
+q1  7__ 7k7 rrr q1
+q1  8__ 8k8 rrr q1
+q1  9__ 9k9 rrr q1
+
+q1  A__ A$A rrr q2
+q1  *** *** *** halt-reject
+
+
+q2  0__ 0t0 rrr q2
+q2  1__ 1t1 rrr q2
+q2  2__ 2t2 rrr q2
+q2  3__ 3t3 rrr q2
+q2  4__ 4t4 rrr q2
+q2  5__ 5t5 rrr q2
+q2  6__ 6t6 rrr q2
+q2  7__ 7t7 rrr q2
+q2  8__ 8t8 rrr q2
+q2  9__ 9t9 rrr q2
+
+q2  Q__ Q__ *l* q3
+q2  Y__ Y__ *l* q3
+q2  N__ N__ *l* q3
+q2  *** *** *** halt-reject
+
+
+q3  *t* *t* *l* q3
+q3  *$* *$* *l* q3
+q3  *k* *k* *l* q3
+
+q3  Q__ Q_Q rrr q4
+q3  Y__ Y_N rrr q4
+q3  N__ N_Y rrr q4
+q3  *** *** *** halt-reject
+
+
+q4  Yk_ YkN rrr q4
+q4  Nk_ NkY rrr q4
+q4  0k_ 0k0 rrr q4
+q4  1k_ 1k1 rrr q4
+q4  2k_ 2k2 rrr q4
+q4  3k_ 3k3 rrr q4
+q4  4k_ 4k4 rrr q4
+q4  5k_ 5k5 rrr q4
+q4  6k_ 6k6 rrr q4
+q4  7k_ 7k7 rrr q4
+q4  8k_ 8k8 rrr q4
+q4  9k_ 9k9 rrr q4
+
+q4  A$_ A$A rrr q5
+q4  *** *** *** halt-reject
+
+
+q5  0t_ 0t0 rrr q5
+q5  1t_ 1t1 rrr q5
+q5  2t_ 2t2 rrr q5
+q5  3t_ 3t3 rrr q5
+q5  4t_ 4t4 rrr q5
+q5  5t_ 5t5 rrr q5
+q5  6t_ 6t6 rrr q5
+q5  7t_ 7t7 rrr q5
+q5  8t_ 8t8 rrr q5
+q5  9t_ 9t9 rrr q5
+
+q5  R__ R_R r*r q6
+q5  L__ L_L r*r q6
+q5  S__ S_S r*r q6
+q5  *** *** *** halt-reject
+
+
+q6  ;__ ;_; rlr q7
+q6  ___ ___ *** halt-accept
+q6  *** *** *** halt-reject
+
+
+q7  *k* *k* *l* q7
+q7  *t* *t* *l* q7
+q7  *$* *$* *l* q7
+
+q7  Q__ Q_Q rrr q8
+q7  *** *** *** halt-reject
+
+
+q8  0k_ 0k0 rrr q8
+q8  1k_ 1k1 rrr q8
+q8  2k_ 2k2 rrr q8
+q8  3k_ 3k3 rrr q8
+q8  4k_ 4k4 rrr q8
+q8  5k_ 5k5 rrr q8
+q8  6k_ 6k6 rrr q8
+q8  7k_ 7k7 rrr q8
+q8  8k_ 8k8 rrr q8
+q8  9k_ 9k9 rrr q8
+
+q8  A$_ A$A rrr q9
+q8  *** *** *** halt-reject
+
+
+q9  0t_ 0t0 rrr q9
+q9  1t_ 1t1 rrr q9
+q9  2t_ 2t2 rrr q9
+q9  3t_ 3t3 rrr q9
+q9  4t_ 4t4 rrr q9
+q9  5t_ 5t5 rrr q9
+q9  6t_ 6t6 rrr q9
+q9  7t_ 7t7 rrr q9
+q9  8t_ 8t8 rrr q9
+q9  9t_ 9t9 rrr q9
+
+q9  Q__ Q__ *l* q3
+q9  Y__ Y__ *l* q3
+q9  N__ N__ *l* q3
+q9  *** *** *** halt-reject
