@@ -31,6 +31,8 @@ Theory of Computation 2020/2021
 
 ## complem.txt
 
+* [x] Feito, falta dúvidas.
+
 - Temos de verificar input?
 
 - 1 fita (2 fitas?), onde a ultima output: onde está YY* meter NN* e vice versa
