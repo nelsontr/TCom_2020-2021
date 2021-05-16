@@ -41,13 +41,13 @@ Theory of Computation 2020/2021
 
 **Q: É preciso o cursor estar no inicio do output?**
 
-**A:** *NA*
+**A:** O resultado deve ficar na ultima fita e o ponteiro deve ficar no inicio do resultado
 
 ---
 
 **Q: É preciso verificar o input?**
 
-**A:** *NA*
+**A:** Vão sempre ser apresentadas da forma correta.
 
 
 
@@ -62,8 +62,19 @@ Theory of Computation 2020/2021
 
 **Q: How the hell `soma`??**
 
-**A:** *NA*
+**A:** Não é necessário. Pode colocar um output com K=2 mesmo recebendo máquina só com K=1.
 
+---
+
+**Q: O seguinte é possivel?**
+
+```
+input = Q0A1Q0A1L;Q0A0YYA1S$Q0A1Q0A1L;Q0A0YYA1S
+---
+output = Q00A1Q00A1L;Q00A0Q10A1S;Q10A1Q10A1L;Q10A0YYYA1S
+```
+
+**A:** Sim, a sua solução está certíssimo para as máquinas dadas.
 
 
 ## while.txt
