@@ -1,0 +1,132 @@
+;; Maquina de reconhecimento de maior k
+q0  ____ ____ ****  halt-accept
+q0  Q___ Q___ r***  q1
+q0  **** **** ****  halt-reject
+
+
+q1  0___ 0k** rr**  q1
+q1  1___ 1k** rr**  q1
+q1  2___ 2k** rr**  q1
+q1  3___ 3k** rr**  q1
+q1  4___ 4k** rr**  q1
+q1  5___ 5k** rr**  q1
+q1  6___ 6k** rr**  q1
+q1  7___ 7k** rr**  q1
+q1  8___ 8k** rr**  q1
+q1  9___ 9k** rr**  q1
+
+q1  A___ A*** r***  q2
+q1  **** **** ****  halt-reject
+
+
+q2  $___ $*** rl**  q3
+q2  0___ 0*** r***  q2
+q2  1___ 1*** r***  q2
+q2  2___ 2*** r***  q2
+q2  3___ 3*** r***  q2
+q2  4___ 4*** r***  q2
+q2  5___ 5*** r***  q2
+q2  6___ 6*** r***  q2
+q2  7___ 7*** r***  q2
+q2  8___ 8*** r***  q2
+q2  9___ 9*** r***  q2
+q2  A___ A*** r***  q2
+q2  Y___ Y*** r***  q2
+q2  N___ N*** r***  q2
+q2  S___ S*** r***  q2
+q2  R___ R*** r***  q2
+q2  L___ L*** r***  q2
+q2  ;___ ;*** r***  q2
+q2  Q___ Q*** r***  q2
+q2  **** **** ****  halt-reject
+
+
+q3  *___ *___ ****  q4
+q3  *k__ *k__ *l**  q3
+
+
+q4  Q_** Q_** rr**  q4
+q4  A___ A*** ll**  q5
+
+q4  0___ 0k** rr**  q4
+q4  1___ 1k** rr**  q4
+q4  2___ 2k** rr**  q4
+q4  3___ 3k** rr**  q4
+q4  4___ 4k** rr**  q4
+q4  5___ 5k** rr**  q4
+q4  6___ 6k** rr**  q4
+q4  7___ 7k** rr**  q4
+q4  8___ 8k** rr**  q4
+q4  9___ 9k** rr**  q4
+q4  0k__ 0k** rr**  q4
+q4  1k__ 1k** rr**  q4
+q4  2k__ 2k** rr**  q4
+q4  3k__ 3k** rr**  q4
+q4  4k__ 4k** rr**  q4
+q4  5k__ 5k** rr**  q4
+q4  6k__ 6k** rr**  q4
+q4  7k__ 7k** rr**  q4
+q4  8k__ 8k** rr**  q4
+q4  9k__ 9k** rr**  q4
+q4  **** **** ****  halt-reject
+
+;; Maquina para voltar tudo atrás
+q5  *k** *k** *l**  q5
+q5  $___ $*** l***  q5
+q5  0___ 0*** l***  q5
+q5  1___ 1*** l***  q5
+q5  2___ 2*** l***  q5
+q5  3___ 3*** l***  q5
+q5  4___ 4*** l***  q5
+q5  5___ 5*** l***  q5
+q5  6___ 6*** l***  q5
+q5  7___ 7*** l***  q5
+q5  8___ 8*** l***  q5
+q5  9___ 9*** l***  q5
+q5  A___ A*** l***  q5
+q5  Y___ Y*** l***  q5
+q5  N___ N*** l***  q5
+q5  S___ S*** l***  q5
+q5  R___ R*** l***  q5
+q5  L___ L*** l***  q5
+q5  ;___ ;*** l***  q5
+q5  Q___ Q*** l***  q5
+q5  ____ _k__ rl**  q6
+
+;; Maquina para converter a entrada para o novo k
+q6  Q___ Q*Q* rrr*  q6
+q6  0k__ 0k00 rrr*  q6
+q6  1k__ 1k11 rrr*  q6
+q6  2k__ 2k22 rrr*  q6
+q6  3k__ 3k33 rrr*  q6
+q6  4k__ 4k44 rrr*  q6
+q6  5k__ 5k55 rrr*  q6
+q6  6k__ 6k66 rrr*  q6
+q6  7k__ 7k77 rrr*  q6
+q6  8k__ 8k88 rrr*  q6
+q6  9k__ 9k99 rrr*  q6
+q6  Ak_* Ak_* ****  q7
+
+q7  Ak_0 Ak0* *rr* q7
+q7  A__* A__* r*** q8
+
+
+q8  0__* 0__* r***  q8
+q8  1__* 1__* r***  q8
+q8  2__* 2__* r***  q8
+q8  3__* 3__* r***  q8
+q8  4__* 4__* r***  q8
+q8  5__* 5__* r***  q8
+q8  6__* 6__* r***  q8
+q8  7__* 7__* r***  q8
+q8  8__* 8__* r***  q8
+q8  9__* 9__* r***  q8
+q8  A__* A__* r***  q8
+q8  Y__* Y__* r***  q8
+q8  N__* N__* r***  q8
+q8  S__* S__* r***  q8
+q8  R__* R__* r***  q8
+q8  L__* L__* r***  q8
+q8  ;__* ;__* r***  q8
+q8  Q__* Q__* r***  q8
+;;not completed
