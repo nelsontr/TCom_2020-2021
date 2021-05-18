@@ -1,6 +1,7 @@
 ;;; EXEMPLO
 ;;; Q0A1Q0A1L;Q0A0YYA1S$Q00A1Q00A1L;Q00A0YYYA1S
-;;; tmbm tem de dar: Q0A1Q1A1L;Q1A0YYA1S$Q00A1Q01A1L;Q01A0YYYA1S
+;;; Q0A1Q1A1L;Q1A0YYA1S$Q00A1Q01A1L;Q01A0YYYA1S
+;;; HARD: Q00A1Q01A4R;Q00A0Q12A3R;Q00A2Q04A6R;Q01A1Q01A1R;Q01A2Q01A2R;Q01A0Q02A3R;Q02A0Q03A1L;Q03A1Q03A1L;Q03A2Q03A2L;Q03A3Q03A3L;Q03A4Q06A4R;Q03A5Q06A5R;Q04A1Q04A1R;Q04A2Q04A2R;Q04A0Q05A3R;Q05A0Q03A2L;Q06A1Q07A7R;Q06A2Q09A6R;Q06A3Q10A3L;Q07A1Q07A1R;Q07A2Q07A2R;Q07A3Q07A3R;Q07A0Q08A1L;Q08A1Q08A1L;Q08A2Q08A2L;Q08A3Q08A3L;Q08A7Q06A7R;Q08A6Q06A6R;Q09A6Q06A6R;Q09A1Q09A1R;Q09A2Q09A2R;Q09A3Q09A3R;Q09A0Q08A2L;Q10A7Q10A1L;Q10A6Q10A2L;Q10A4Q11A1R;Q10A5Q11A2R;Q11A1YYYA1L;Q11A2YYYA2L;Q11A3YYYA3L;Q12A0YYYA0L$Q00A1Q01A1L;Q01A0YYYA1S
 
 ;; Maquina de reconhecimento de maior k
 q0  ____ ____ ****  halt-accept
@@ -8,40 +9,40 @@ q0  Q___ Q___ r***  q1
 q0  **** **** ****  halt-reject
 
 
-q1  0___ 0k** rr**  q1
-q1  1___ 1k** rr**  q1
-q1  2___ 2k** rr**  q1
-q1  3___ 3k** rr**  q1
-q1  4___ 4k** rr**  q1
-q1  5___ 5k** rr**  q1
-q1  6___ 6k** rr**  q1
-q1  7___ 7k** rr**  q1
-q1  8___ 8k** rr**  q1
-q1  9___ 9k** rr**  q1
+q1  0___ 0k__ rr**  q1
+q1  1___ 1k__ rr**  q1
+q1  2___ 2k__ rr**  q1
+q1  3___ 3k__ rr**  q1
+q1  4___ 4k__ rr**  q1
+q1  5___ 5k__ rr**  q1
+q1  6___ 6k__ rr**  q1
+q1  7___ 7k__ rr**  q1
+q1  8___ 8k__ rr**  q1
+q1  9___ 9k__ rr**  q1
 
 q1  A___ A*** r***  q2
 q1  **** **** ****  halt-reject
 
 
-q2  $___ $*** rl**  q3
-q2  0___ 0*** r***  q2
-q2  1___ 1*** r***  q2
-q2  2___ 2*** r***  q2
-q2  3___ 3*** r***  q2
-q2  4___ 4*** r***  q2
-q2  5___ 5*** r***  q2
-q2  6___ 6*** r***  q2
-q2  7___ 7*** r***  q2
-q2  8___ 8*** r***  q2
-q2  9___ 9*** r***  q2
-q2  A___ A*** r***  q2
-q2  Y___ Y*** r***  q2
-q2  N___ N*** r***  q2
-q2  S___ S*** r***  q2
-q2  R___ R*** r***  q2
-q2  L___ L*** r***  q2
-q2  ;___ ;*** r***  q2
-q2  Q___ Q*** r***  q2
+q2  $___ $___ rl**  q3
+q2  0___ 0___ r***  q2
+q2  1___ 1___ r***  q2
+q2  2___ 2___ r***  q2
+q2  3___ 3___ r***  q2
+q2  4___ 4___ r***  q2
+q2  5___ 5___ r***  q2
+q2  6___ 6___ r***  q2
+q2  7___ 7___ r***  q2
+q2  8___ 8___ r***  q2
+q2  9___ 9___ r***  q2
+q2  A___ A___ r***  q2
+q2  Y___ Y___ r***  q2
+q2  N___ N___ r***  q2
+q2  S___ S___ r***  q2
+q2  R___ R___ r***  q2
+q2  L___ L___ r***  q2
+q2  ;___ ;___ r***  q2
+q2  Q___ Q___ r***  q2
 q2  **** **** ****  halt-reject
 
 
@@ -54,213 +55,222 @@ q4  Q_** Q_** rr**  q4
 q4  A___ A___ lll*  q5
 q4  Ak__ Ak__ ****  q5
 
-q4  0_*_ 0k0* rrr*  q4
-q4  1_*_ 1k1* rrr*  q4
-q4  2_*_ 2k2* rrr*  q4
-q4  3_*_ 3k3* rrr*  q4
-q4  4_*_ 4k4* rrr*  q4
-q4  5_*_ 5k5* rrr*  q4
-q4  6_*_ 6k6* rrr*  q4
-q4  7_*_ 7k7* rrr*  q4
-q4  8_*_ 8k8* rrr*  q4
-q4  9_*_ 9k9* rrr*  q4
-q4  0k*_ 0k0* rrr*  q4
-q4  1k__ 1k1* rrr*  q4
-q4  2k__ 2k2* rrr*  q4
-q4  3k__ 3k3* rrr*  q4
-q4  4k__ 4k4* rrr*  q4
-q4  5k__ 5k5* rrr*  q4
-q4  6k__ 6k6* rrr*  q4
-q4  7k__ 7k7* rrr*  q4
-q4  8k__ 8k8* rrr*  q4
-q4  9k__ 9k9* rrr*  q4
+q4  0_*_ 0k0_ rrr*  q4
+q4  1_*_ 1k1_ rrr*  q4
+q4  2_*_ 2k2_ rrr*  q4
+q4  3_*_ 3k3_ rrr*  q4
+q4  4_*_ 4k4_ rrr*  q4
+q4  5_*_ 5k5_ rrr*  q4
+q4  6_*_ 6k6_ rrr*  q4
+q4  7_*_ 7k7_ rrr*  q4
+q4  8_*_ 8k8_ rrr*  q4
+q4  9_*_ 9k9_ rrr*  q4
+q4  0k__ 0k0_ rrr*  q4
+q4  1k__ 1k1_ rrr*  q4
+q4  2k__ 2k2_ rrr*  q4
+q4  3k__ 3k3_ rrr*  q4
+q4  4k__ 4k4_ rrr*  q4
+q4  5k__ 5k5_ rrr*  q4
+q4  6k__ 6k6_ rrr*  q4
+q4  7k__ 7k7_ rrr*  q4
+q4  8k__ 8k8_ rrr*  q4
+q4  9k__ 9k9_ rrr*  q4
 q4  **** **** ****  halt-reject
 
 
 ;; Maquina para voltar tudo atrás
 q5  *k** *k** *ll*  q5
-q5  $_*_ $*** l***  q5
-q5  0_*_ 0*** l***  q5
-q5  1_*_ 1*** l***  q5
-q5  2_*_ 2*** l***  q5
-q5  3_*_ 3*** l***  q5
-q5  4_*_ 4*** l***  q5
-q5  5_*_ 5*** l***  q5
-q5  6_*_ 6*** l***  q5
-q5  7_*_ 7*** l***  q5
-q5  8_*_ 8*** l***  q5
-q5  9_*_ 9*** l***  q5
-q5  A_*_ A*** l***  q5
-q5  Y_*_ Y*** l***  q5
-q5  N_*_ N*** l***  q5
-q5  S_*_ S*** l***  q5
-q5  R_*_ R*** l***  q5
-q5  L_*_ L*** l***  q5
-q5  ;_*_ ;*** l***  q5
-q5  Q_*_ Q*** l***  q5
-q5  __*_ _k__ r*r*  q10
+q5  $_*_ $_*_ l***  q5
+q5  0_*_ 0_*_ l***  q5
+q5  1_*_ 1_*_ l***  q5
+q5  2_*_ 2_*_ l***  q5
+q5  3_*_ 3_*_ l***  q5
+q5  4_*_ 4_*_ l***  q5
+q5  5_*_ 5_*_ l***  q5
+q5  6_*_ 6_*_ l***  q5
+q5  7_*_ 7_*_ l***  q5
+q5  8_*_ 8_*_ l***  q5
+q5  9_*_ 9_*_ l***  q5
+q5  A_*_ A_*_ l***  q5
+q5  Y_*_ Y_*_ l***  q5
+q5  N_*_ N_*_ l***  q5
+q5  S_*_ S_*_ l***  q5
+q5  R_*_ R_*_ l***  q5
+q5  L_*_ L_*_ l***  q5
+q5  ;_*_ ;_*_ l***  q5
+q5  Q_*_ Q_*_ l***  q5
+q5  __*_ _k__ r*r*  q6
 q5  **** **** ****  halt-reject
 
 
 ;;Check number k's and inicial of 2nd machine
-q10 Qk0* Qk0* *rr* q10
-q10 Qk1* Qk1* *rr* q10
-q10 Qk2* Qk2* *rr* q10
-q10 Qk3* Qk3* *rr* q10
-q10 Qk4* Qk4* *rr* q10
-q10 Qk5* Qk5* *rr* q10
-q10 Qk6* Qk6* *rr* q10
-q10 Qk7* Qk7* *rr* q10
-q10 Qk8* Qk8* *rr* q10
-q10 Qk9* Qk9* *rr* q10
-q10 Qk_* Qk_* *r** q10
+q6  Qk0* Qk0* *rr* q6
+q6  Qk1* Qk1* *rr* q6
+q6  Qk2* Qk2* *rr* q6
+q6  Qk3* Qk3* *rr* q6
+q6  Qk4* Qk4* *rr* q6
+q6  Qk5* Qk5* *rr* q6
+q6  Qk6* Qk6* *rr* q6
+q6  Qk7* Qk7* *rr* q6
+q6  Qk8* Qk8* *rr* q6
+q6  Qk9* Qk9* *rr* q6
+q6  Qk_* Qk_* *r** q6
 
-q10 Q___ Q___ lll* q10
-q10 _k0* _k0* *ll* q10
-q10 _k1* _k1* *ll* q10
-q10 _k2* _k2* *ll* q10
-q10 _k3* _k3* *ll* q10
-q10 _k4* _k4* *ll* q10
-q10 _k5* _k5* *ll* q10
-q10 _k6* _k6* *ll* q10
-q10 _k7* _k7* *ll* q10
-q10 _k8* _k8* *ll* q10
-q10 _k9* _k9* *ll* q10
-q10 _k_* _k1* *ll* q10
+q6  Q___ Q___ lll* q6
+q6  _k0* _k0* *ll* q6
+q6  _k1* _k1* *ll* q6
+q6  _k2* _k2* *ll* q6
+q6  _k3* _k3* *ll* q6
+q6  _k4* _k4* *ll* q6
+q6  _k5* _k5* *ll* q6
+q6  _k6* _k6* *ll* q6
+q6  _k7* _k7* *ll* q6
+q6  _k8* _k8* *ll* q6
+q6  _k9* _k9* *ll* q6
+q6  _k_* _k1* *ll* q6
 
-q10 ___* ___* **r* q10
-q10 __1* __0* r*** q6
-q10  **** **** ****  halt-reject
-
-
-;; Machine to convert every state (Q) in the new k
-q6  Q___ Q*_Q rr*r  q6
-q6  Qk__ Q*0Q *l**  q6
-
-q6  Q_*_ Q**Q rr*r  q6
-q6  0k*_ 0k*_ rr*r  q6
-q6  1k*_ 1k*_ rr*r  q6
-q6  2k*_ 2k*_ rr*r  q6
-q6  3k*_ 3k*_ rr*r  q6
-q6  4k*_ 4k*_ rr*r  q6
-q6  5k*_ 5k*_ rr*r  q6
-q6  6k*_ 6k*_ rr*r  q6
-q6  7k*_ 7k*_ rr*r  q6
-q6  8k*_ 8k*_ rr*r  q6
-q6  9k*_ 9k*_ rr*r  q6
-q6  Ak*_ Ak*_ ****  q7
+q6  ___* ___* **r*  q6
+q6  __1* __0* r***  q7
+q6  __0* __0* r***  q7
 q6  **** **** ****  halt-reject
 
 
-q7  Ak*_ Ak*_ *r*r q7
-q7  A_*_ A_*_ ll*l q8
+;; Machine to convert every state (Q) in the new k
+q7  Q___ Q__Q rr*r  q7
+q7  Qk__ Qk0Q *l**  q7
+
+q7  Q_*_ Q_*Q rr*r  q7
+q7  0k*_ 0k*_ rr*r  q7
+q7  1k*_ 1k*_ rr*r  q7
+q7  2k*_ 2k*_ rr*r  q7
+q7  3k*_ 3k*_ rr*r  q7
+q7  4k*_ 4k*_ rr*r  q7
+q7  5k*_ 5k*_ rr*r  q7
+q7  6k*_ 6k*_ rr*r  q7
+q7  7k*_ 7k*_ rr*r  q7
+q7  8k*_ 8k*_ rr*r  q7
+q7  9k*_ 9k*_ rr*r  q7
+q7  Ak*_ Ak*_ ****  q8
 q7  **** **** ****  halt-reject
 
 
-q8  0k*_ 0k*0 ll*l  q8
-q8  1k*_ 1k*1 ll*l  q8
-q8  2k*_ 2k*2 ll*l  q8
-q8  3k*_ 3k*3 ll*l  q8
-q8  4k*_ 4k*4 ll*l  q8
-q8  5k*_ 5k*5 ll*l  q8
-q8  6k*_ 6k*6 ll*l  q8
-q8  7k*_ 7k*7 ll*l  q8
-q8  8k*_ 8k*8 ll*l  q8
-q8  9k*_ 9k*9 ll*l  q8
-
-q8  0*** 0*** r**r  q8
-q8  1*** 1*** r**r  q8
-q8  2*** 2*** r**r  q8
-q8  3*** 3*** r**r  q8
-q8  4*** 4*** r**r  q8
-q8  5*** 5*** r**r  q8
-q8  6*** 6*** r**r  q8
-q8  7*** 7*** r**r  q8
-q8  8*** 8*** r**r  q8
-q8  9*** 9*** r**r  q8
-
-q8  Qk0_ Qk*0 *l*l  q8
-q8  Qk1_ Qk*1 *l*l  q8
-q8  Q_*Q Q_*Q r**r  q8
-q8  A_** A_** ***r  q8
-q8  A_*_ A_*_ **** q9
+q8  Ak*_ Ak*_ *r*r  q8
+q8  A_*_ A_*_ ll*l  q9
 q8  **** **** ****  halt-reject
 
 
+q9  0k*_ 0k*0 ll*l  q9
+q9  1k*_ 1k*1 ll*l  q9
+q9  2k*_ 2k*2 ll*l  q9
+q9  3k*_ 3k*3 ll*l  q9
+q9  4k*_ 4k*4 ll*l  q9
+q9  5k*_ 5k*5 ll*l  q9
+q9  6k*_ 6k*6 ll*l  q9
+q9  7k*_ 7k*7 ll*l  q9
+q9  8k*_ 8k*8 ll*l  q9
+q9  9k*_ 9k*9 ll*l  q9
 
-q9  A_*_ A_*A r**r q9
-q9  0_*_ 0_*0 r**r q9
-q9  1_*_ 1_*1 r**r q9
-q9  L_*_ L_*L r**r q9
-q9  ;_*_ ;_*; r**r q9
-q9  S_*_ S_*S r**r q9
-q9  $_*_ $_1; r**r q6
-q9  Y_0_ Y_1Q *r*r q91
-q9  Y_1_ Y_1Y *r*r q95
-q9  Q_*_ Q_*Q rr*r q6
-q9  __1_ __1_ ***l q12
+q9  0*** 0*** r**r  q9
+q9  1*** 1*** r**r  q9
+q9  2*** 2*** r**r  q9
+q9  3*** 3*** r**r  q9
+q9  4*** 4*** r**r  q9
+q9  5*** 5*** r**r  q9
+q9  6*** 6*** r**r  q9
+q9  7*** 7*** r**r  q9
+q9  8*** 8*** r**r  q9
+q9  9*** 9*** r**r  q9
+
+q9  Qk0_ Qk00 *l*l  q9
+q9  Qk1_ Qk11 *l*l  q9
+q9  Q_*Q Q_*Q r**r  q9
+q9  A_** A_** ***r  q9
+q9  A_*_ A_*_ ****  q10
 q9  **** **** ****  halt-reject
 
 
+q10 0_*_ 0_*0 r**r  q10
+q10 1_*_ 1_*1 r**r  q10
+q10 2_*_ 2_*2 r**r  q10
+q10 3_*_ 3_*3 r**r  q10
+q10 4_*_ 4_*4 r**r  q10
+q10 5_*_ 5_*5 r**r  q10
+q10 6_*_ 6_*6 r**r  q10
+q10 7_*_ 7_*7 r**r  q10
+q10 8_*_ 8_*8 r**r  q10
+q10 9_*_ 9_*9 r**r  q10
 
-q95 Yk** Yk*Y *r*r q95
-q95 Y_** Y*** r*** q95
-q95 A_1_ A_1_ **** q9
-q95  **** **** ****  halt-reject
+q10 A_*_ A_*A r**r  q10
+q10 S_*_ S_*S r**r  q10
+q10 L_*_ L_*L r**r  q10
+q10 R_*_ R_*R r**r  q10
 
-
-
-q91  Yk0_ Yk00 rrrr  q91
-q91  Yk1_ Yk11 rrrr  q91
-q91  Yk2_ Yk22 rrrr  q91
-q91  Yk3_ Yk33 rrrr  q91
-q91  Yk4_ Yk44 rrrr  q91
-q91  Yk5_ Yk55 rrrr  q91
-q91  Yk6_ Yk66 rrrr  q91
-q91  Yk7_ Yk77 rrrr  q91
-q91  Yk8_ Yk88 rrrr  q91
-q91  Yk9_ Yk99 rrrr  q91
-
-q91  Ak0_ Ak00 *rrr  q91
-q91  Ak1_ Ak11 *rrr  q91
-q91  Ak0_ Ak00 *rrr  q91
-q91  Ak1_ Ak11 *rrr  q91
-q91  Ak2_ Ak22 *rrr  q91
-q91  Ak3_ Ak33 *rrr  q91
-q91  Ak4_ Ak44 *rrr  q91
-q91  Ak5_ Ak55 *rrr  q91
-q91  Ak6_ Ak66 *rrr  q91
-q91  Ak7_ Ak77 *rrr  q91
-q91  Ak8_ Ak88 *rrr  q91
-q91  Ak9_ Ak99 *rrr  q91
-q91  A___ A___ *ll*  q92
-q91  **** **** ****  halt-reject
+q10 $_*_ $_1; r**r  q7
+q10 Q_*_ Q_*Q rr*r  q7
+q10 ;_*_ ;_*; r**r  q10
+q10 Y_1_ Y_1Y *r*r  q11
+q10 Y_0_ Y_1Q *r*r  q12
+q10 __1_ __1_ ***l  q14
+q10 **** **** ****  halt-reject
 
 
-q92  Ak*_ Ak*_ *ll* q92
-q92  A_1_ A_0_ **** q9
-q92  A___ A___ **r* q92
-q92  **** **** ****  halt-reject
+q11 Yk** Yk*Y *r*r  q11
+q11 Y_** Y_** r***  q11
+q11 A_1_ A_1_ ****  q10
+q11 **** **** ****  halt-reject
 
 
-q12  __*$ ***$ ***l  q12
-q12  __*0 ***0 ***l  q12
-q12  __*1 ***1 ***l  q12
-q12  __*2 ***2 ***l  q12
-q12  __*3 ***3 ***l  q12
-q12  __*4 ***4 ***l  q12
-q12  __*5 ***5 ***l  q12
-q12  __*6 ***6 ***l  q12
-q12  __*7 ***7 ***l  q12
-q12  __*8 ***8 ***l  q12
-q12  __*9 ***9 ***l  q12
-q12  __*A ***A ***l  q12
-q12  __*Y ***Y ***l  q12
-q12  __*N ***N ***l  q12
-q12  __*S ***S ***l  q12
-q12  __*R ***R ***l  q12
-q12  __*L ***L ***l  q12
-q12  __*; ***; ***l  q12
-q12  __*Q ***Q ***l  q12
-q12  **** **** ****  halt-reject
-q12  __1_ __1_ ***r  halt-accept
+q12 Yk0_ Yk00 rrrr  q12
+q12 Yk1_ Yk11 rrrr  q12
+q12 Yk2_ Yk22 rrrr  q12
+q12 Yk3_ Yk33 rrrr  q12
+q12 Yk4_ Yk44 rrrr  q12
+q12 Yk5_ Yk55 rrrr  q12
+q12 Yk6_ Yk66 rrrr  q12
+q12 Yk7_ Yk77 rrrr  q12
+q12 Yk8_ Yk88 rrrr  q12
+q12 Yk9_ Yk99 rrrr  q12
+
+q12 Ak0_ Ak00 *rrr  q12
+q12 Ak1_ Ak11 *rrr  q12
+q12 Ak0_ Ak00 *rrr  q12
+q12 Ak1_ Ak11 *rrr  q12
+q12 Ak2_ Ak22 *rrr  q12
+q12 Ak3_ Ak33 *rrr  q12
+q12 Ak4_ Ak44 *rrr  q12
+q12 Ak5_ Ak55 *rrr  q12
+q12 Ak6_ Ak66 *rrr  q12
+q12 Ak7_ Ak77 *rrr  q12
+q12 Ak8_ Ak88 *rrr  q12
+q12 Ak9_ Ak99 *rrr  q12
+q12 A___ A___ *ll*  q13
+q12 **** **** ****  halt-reject
+
+
+q13 Ak*_ Ak*_ *ll* q13
+q13 A_1_ A_0_ **** q10
+q13 A___ A___ **r* q13
+q13 **** **** **** halt-reject
+
+
+q14 __*$ __*$ ***l  q14
+q14 __*0 __*0 ***l  q14
+q14 __*1 __*1 ***l  q14
+q14 __*2 __*2 ***l  q14
+q14 __*3 __*3 ***l  q14
+q14 __*4 __*4 ***l  q14
+q14 __*5 __*5 ***l  q14
+q14 __*6 __*6 ***l  q14
+q14 __*7 __*7 ***l  q14
+q14 __*8 __*8 ***l  q14
+q14 __*9 __*9 ***l  q14
+q14 __*A __*A ***l  q14
+q14 __*Y __*Y ***l  q14
+q14 __*N __*N ***l  q14
+q14 __*S __*S ***l  q14
+q14 __*R __*R ***l  q14
+q14 __*L __*L ***l  q14
+q14 __*; __*; ***l  q14
+q14 __*Q __*Q ***l  q14
+q14 __1_ __1_ ***r  halt-accept
+q14 **** **** ****  halt-reject
