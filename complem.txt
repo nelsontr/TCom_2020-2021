@@ -1,8 +1,20 @@
+;; Theory of Computation - Project 2020/2021
+;;  |- Turing Machine a)
+;;
+;; -------- Developed by: --------
+;; Group 011:
+;;  |-Beatriz Alves, ist193691
+;;  |-Matheus Kasai, ist191627
+;;  |-Nelson Trindade, ist193743
+
+
+;; start state
 q0  ___ ___ *** halt-accept
 q0  Q__ Q_Q r*r q1
 q0  *** *** *** halt-reject
 
 
+;; copy input to output / copy inicial k number
 q1  0__ 0k0 rrr q1
 q1  1__ 1k1 rrr q1
 q1  2__ 2k2 rrr q1
@@ -18,6 +30,7 @@ q1  A__ A$A rrr q2
 q1  *** *** *** halt-reject
 
 
+;; copy input to output / copy inicial t number
 q2  0__ 0t0 rrr q2
 q2  1__ 1t1 rrr q2
 q2  2__ 2t2 rrr q2
@@ -35,6 +48,7 @@ q2  N__ N__ *l* q3
 q2  *** *** *** halt-reject
 
 
+;; rewind second tape
 q3  *t* *t* *l* q3
 q3  *$* *$* *l* q3
 q3  *k* *k* *l* q3
@@ -45,6 +59,8 @@ q3  N__ N_Y rrr q4
 q3  *** *** *** halt-reject
 
 
+;; copy input to output, checking if all
+;; states have the same length
 q4  Yk_ YkN rrr q4
 q4  Nk_ NkY rrr q4
 q4  0k_ 0k0 rrr q4
@@ -62,6 +78,8 @@ q4  A$_ A$A rrr q5
 q4  *** *** *** halt-reject
 
 
+;; copy input to output, checking if all
+;; simbols have the same length
 q5  0t_ 0t0 rrr q5
 q5  1t_ 1t1 rrr q5
 q5  2t_ 2t2 rrr q5
@@ -79,11 +97,13 @@ q5  S__ S_S r*r q6
 q5  *** *** *** halt-reject
 
 
+;; check if there are more states
 q6  ;__ ;_; rlr q7
 q6  ___ ___ *** halt-accept
 q6  *** *** *** halt-reject
 
 
+;; rewind second tape
 q7  *k* *k* *l* q7
 q7  *t* *t* *l* q7
 q7  *$* *$* *l* q7
@@ -92,6 +112,8 @@ q7  Q__ Q_Q rrr q8
 q7  *** *** *** halt-reject
 
 
+;; copy input to output, checking if all
+;; states have the same length
 q8  0k_ 0k0 rrr q8
 q8  1k_ 1k1 rrr q8
 q8  2k_ 2k2 rrr q8
@@ -106,7 +128,8 @@ q8  9k_ 9k9 rrr q8
 q8  A$_ A$A rrr q9
 q8  *** *** *** halt-reject
 
-
+;; copy input to output, checking if all
+;; simbols have the same length
 q9  0t_ 0t0 rrr q9
 q9  1t_ 1t1 rrr q9
 q9  2t_ 2t2 rrr q9
