@@ -1,0 +1,373 @@
+;; Theory of Computation - Project 2020/2021
+;;  |- Turing Machine c)
+;;
+;; -------- Developed by: --------
+;; Group 011:
+;;  |-Beatriz Alves, ist193691
+;;  |-Matheus Kasai, ist191627
+;;  |-Nelson Trindade, ist193743
+
+
+;; start state
+q0  _____ _____ *****  halt-accept
+q0  Q____ Q____ r****  q1
+q0  ***** ***** *****  halt-reject
+
+
+;; check the number of k's in first state
+;; of the first machine
+q1  0____ 0k___ rr***  q1
+q1  1____ 1k___ rr***  q1
+q1  2____ 2k___ rr***  q1
+q1  3____ 3k___ rr***  q1
+q1  4____ 4k___ rr***  q1
+q1  5____ 5k___ rr***  q1
+q1  6____ 6k___ rr***  q1
+q1  7____ 7k___ rr***  q1
+q1  8____ 8k___ rr***  q1
+q1  9____ 9k___ rr***  q1
+
+q1  A____ A**** r****  q2
+q1  ***** ***** *****  halt-reject
+
+
+;; skip to second machine
+q2  0____ 0____ r****  q2
+q2  1____ 1____ r****  q2
+q2  2____ 2____ r****  q2
+q2  3____ 3____ r****  q2
+q2  4____ 4____ r****  q2
+q2  5____ 5____ r****  q2
+q2  6____ 6____ r****  q2
+q2  7____ 7____ r****  q2
+q2  8____ 8____ r****  q2
+q2  9____ 9____ r****  q2
+
+q2  Q____ Q____ r****  q2
+q2  A____ A____ r****  q2
+q2  $____ $____ r****  q4
+q2  Y____ Y____ r****  q2
+q2  N____ N____ r****  q2
+q2  S____ S____ r****  q2
+q2  R____ R____ r****  q2
+q2  L____ L____ r****  q2
+q2  ;____ ;____ r****  q2
+q2  ***** ***** *****  halt-reject
+
+
+;; rewind second tape
+q3  *____ *____ *****  q4
+q3  *k___ *k___ *l***  q3
+q3  ***** ***** *****  halt-reject
+
+
+;; check the number of k's in first state of the
+;; second machine and copies the inicial state
+q4  Q_*** Q_*** rl***  q4
+q4  A____ A____ **l**  q5
+q4  Ak___ Ak___ *****  q5
+
+q4  0_*__ 0k0__ rlr**  q4
+q4  1_*__ 1k1__ rlr**  q4
+q4  2_*__ 2k2__ rlr**  q4
+q4  3_*__ 3k3__ rlr**  q4
+q4  4_*__ 4k4__ rlr**  q4
+q4  5_*__ 5k5__ rlr**  q4
+q4  6_*__ 6k6__ rlr**  q4
+q4  7_*__ 7k7__ rlr**  q4
+q4  8_*__ 8k8__ rlr**  q4
+q4  9_*__ 9k9__ rlr**  q4
+
+q4  0k___ 0k0__ rlr**  q4
+q4  1k___ 1k1__ rlr**  q4
+q4  2k___ 2k2__ rlr**  q4
+q4  3k___ 3k3__ rlr**  q4
+q4  4k___ 4k4__ rlr**  q4
+q4  5k___ 5k5__ rlr**  q4
+q4  6k___ 6k6__ rlr**  q4
+q4  7k___ 7k7__ rlr**  q4
+q4  8k___ 8k8__ rlr**  q4
+q4  9k___ 9k9__ rlr**  q4
+q4  ***** ***** *****  halt-reject
+
+
+;; rewind to first state of the first machine
+q5  A_*__ A_*__ **l**  q5
+q5  $____ $____ l****  q5
+q5  0____ 0____ l****  q5
+q5  1____ 1____ l****  q5
+q5  2____ 2____ l****  q5
+q5  3____ 3____ l****  q5
+q5  4____ 4____ l****  q5
+q5  5____ 5____ l****  q5
+q5  6____ 6____ l****  q5
+q5  7____ 7____ l****  q5
+q5  8____ 8____ l****  q5
+q5  9____ 9____ l****  q5
+q5  A____ A____ l****  q5
+q5  Y____ Y____ l****  q5
+q5  N____ N____ l****  q5
+q5  S____ S____ l****  q5
+q5  R____ R____ l****  q5
+q5  L____ L____ l****  q5
+q5  ;____ ;____ l****  q5
+q5  Q____ Q____ l****  q5
+q5  _____ _k___ r*r**  q6
+q5  ***** ***** *****  halt-reject
+
+
+;; convert the third tape to the number of k's
+;; third tape: first state of the second machine
+q6  Qk0_* Qk0_* *rr** q6
+q6  Qk1_* Qk1_* *rr** q6
+q6  Qk2_* Qk2_* *rr** q6
+q6  Qk3_* Qk3_* *rr** q6
+q6  Qk4_* Qk4_* *rr** q6
+q6  Qk5_* Qk5_* *rr** q6
+q6  Qk6_* Qk6_* *rr** q6
+q6  Qk7_* Qk7_* *rr** q6
+q6  Qk8_* Qk8_* *rr** q6
+q6  Qk9_* Qk9_* *rr** q6
+q6  Qk__* Qk__* *r*** q6
+
+q6  Q____ Q____ lll** q6
+q6  _k0_* _k0_* *ll** q6
+q6  _k1_* _k1_* *ll** q6
+q6  _k2_* _k2_* *ll** q6
+q6  _k3_* _k3_* *ll** q6
+q6  _k4_* _k4_* *ll** q6
+q6  _k5_* _k5_* *ll** q6
+q6  _k6_* _k6_* *ll** q6
+q6  _k7_* _k7_* *ll** q6
+q6  _k8_* _k8_* *ll** q6
+q6  _k9_* _k9_* *ll** q6
+q6  _k__* _k1_* *ll** q6
+
+q6  ____* ____* **r**  q6
+q6  __1_* __0_* r****  q71
+q6  __0_* __0_* r****  q71
+q6  ***** ***** *****  halt-reject
+
+q71  Q____ Q___Q rr*rr  q71
+q71  Qk___ Qk0_Q *l*r*  q71
+
+q71  Q_*__ Q_*_Q rr**r  q71
+q71  0k*__ 0k*__ rr*rr  q71
+q71  1k*__ 1k*__ rr*rr  q71
+q71  2k*__ 2k*__ rr*rr  q71
+q71  3k*__ 3k*__ rr*rr  q71
+q71  4k*__ 4k*__ rr*rr  q71
+q71  5k*__ 5k*__ rr*rr  q71
+q71  6k*__ 6k*__ rr*rr  q71
+q71  7k*__ 7k*__ rr*rr  q71
+q71  8k*__ 8k*__ rr*rr  q71
+q71  9k*__ 9k*__ rr*rr  q71
+q71  Ak*__ Ak*__ *****  q81
+q71  ***** ***** *****  halt-reject
+
+;; put the remaining spaces in output
+q81  Ak*__ Ak*__ *r*rr  q81
+q81  A_*__ A_*__ ll**l  q91
+q81  ***** ***** *****  halt-reject
+
+;; convert every state in the new number of k
+q7  Q____ Q___Q rr**r  q7
+q7  Qk___ Qk0_Q *l***  q7
+
+q7  Q_*__ Q_*_Q rr**r  q7
+q7  0k*__ 0k*__ rr**r  q7
+q7  1k*__ 1k*__ rr**r  q7
+q7  2k*__ 2k*__ rr**r  q7
+q7  3k*__ 3k*__ rr**r  q7
+q7  4k*__ 4k*__ rr**r  q7
+q7  5k*__ 5k*__ rr**r  q7
+q7  6k*__ 6k*__ rr**r  q7
+q7  7k*__ 7k*__ rr**r  q7
+q7  8k*__ 8k*__ rr**r  q7
+q7  9k*__ 9k*__ rr**r  q7
+q7  Ak*__ Ak*__ *****  q8
+q7  ***** ***** *****  halt-reject
+
+
+;; put the remaining spaces in output
+q8  Ak*__ Ak*__ *r**r  q8
+q8  A_*__ A_*__ ll**l  q9
+q8  ***** ***** *****  halt-reject
+
+
+;; replace spaces with the correct state
+q9  0k**_ 0k**0 ll**l  q9
+q9  1k**_ 1k**1 ll**l  q9
+q9  2k**_ 2k**2 ll**l  q9
+q9  3k**_ 3k**3 ll**l  q9
+q9  4k**_ 4k**4 ll**l  q9
+q9  5k**_ 5k**5 ll**l  q9
+q9  6k**_ 6k**6 ll**l  q9
+q9  7k**_ 7k**7 ll**l  q9
+q9  8k**_ 8k**8 ll**l  q9
+q9  9k**_ 9k**9 ll**l  q9
+
+q9  0**** 0**** r***r  q9
+q9  1**** 1**** r***r  q9
+q9  2**** 2**** r***r  q9
+q9  3**** 3**** r***r  q9
+q9  4**** 4**** r***r  q9
+q9  5**** 5**** r***r  q9
+q9  6**** 6**** r***r  q9
+q9  7**** 7**** r***r  q9
+q9  8**** 8**** r***r  q9
+q9  9**** 9**** r***r  q9
+
+q9  Qk0*_ Qk0*0 *l**l  q9
+q9  Qk1*_ Qk1*1 *l**l  q9
+q9  Q_**Q Q_**Q r***r  q9
+q9  A_*** A_*** ****r  q9
+q9  A_**_ A_**_ *****  q10
+q9  ***** ***** *****  halt-reject
+
+
+;; replace spaces with the correct state
+q91  0k*__ 0k*00 ll*ll  q91
+q91  1k*__ 1k*11 ll*ll  q91
+q91  2k*__ 2k*22 ll*ll  q91
+q91  3k*__ 3k*33 ll*ll  q91
+q91  4k*__ 4k*44 ll*ll  q91
+q91  5k*__ 5k*55 ll*ll  q91
+q91  6k*__ 6k*66 ll*ll  q91
+q91  7k*__ 7k*77 ll*ll  q91
+q91  8k*__ 8k*88 ll*ll  q91
+q91  9k*__ 9k*99 ll*ll  q91
+
+q91  0**** 0**** r**rr  q91
+q91  1**** 1**** r**rr  q91
+q91  2**** 2**** r**rr  q91
+q91  3**** 3**** r**rr  q91
+q91  4**** 4**** r**rr  q91
+q91  5**** 5**** r**rr  q91
+q91  6**** 6**** r**rr  q91
+q91  7**** 7**** r**rr  q91
+q91  8**** 8**** r**rr  q91
+q91  9**** 9**** r**rr  q91
+
+q91  Qk0__ Qk000 *l*ll  q91
+q91  Qk1__ Qk111 *l*ll  q91
+q91  Q_*_Q Q_*_Q r***r  q91
+q91  A_*** A_*** ****r  q91
+q91  A_**_ A_**_ ***l*  q10
+q91  ***** ***** *****  halt-reject
+
+
+;; skip non state
+q10 0_*__ 0_*_0 r***r  q10
+q10 1_*__ 1_*_1 r***r  q10
+q10 2_*__ 2_*_2 r***r  q10
+q10 3_*__ 3_*_3 r***r  q10
+q10 4_*__ 4_*_4 r***r  q10
+q10 5_*__ 5_*_5 r***r  q10
+q10 6_*__ 6_*_6 r***r  q10
+q10 7_*__ 7_*_7 r***r  q10
+q10 8_*__ 8_*_8 r***r  q10
+q10 9_*__ 9_*_9 r***r  q10
+
+q10 A_*__ A_*_A r***r  q10
+q10 S_*__ S_*_S r***r  q10
+q10 L_*__ L_*_L r***r  q10
+q10 R_*__ R_*_R r***r  q10
+q10 N_0__ N_0_Y r***r  q10
+q10 N_1__ N_1_N r***r  q10
+
+
+q10 $_*__ $_1_; r***r  q7
+q10 Q_*__ Q_*_Q rr**r  q7
+q10 ;_*__ ;_*_; r***r  q10
+q10 Y_1__ Y_1_Q *r*rr  q11
+q10 Y_0__ Y_1_Q *r**r  q12
+q10 __1__ __1__ ****l  q14
+q10 ***** ***** *****  halt-reject
+
+
+;; replace Y in second machine with the third tape
+q11 Yk*0_ Yk*00 rrrrr  q11
+q11 Yk*1_ Yk*11 rrrrr  q11
+q11 Yk*2_ Yk*22 rrrrr  q11
+q11 Yk*3_ Yk*33 rrrrr  q11
+q11 Yk*4_ Yk*44 rrrrr  q11
+q11 Yk*5_ Yk*55 rrrrr  q11
+q11 Yk*6_ Yk*66 rrrrr  q11
+q11 Yk*7_ Yk*77 rrrrr  q11
+q11 Yk*8_ Yk*88 rrrrr  q11
+q11 Yk*9_ Yk*99 rrrrr  q11
+
+q11 Ak*0_ Ak*00 *rrrr  q11
+q11 Ak*1_ Ak*11 *rrrr  q11
+q11 Ak*2_ Ak*22 *rrrr  q11
+q11 Ak*3_ Ak*33 *rrrr  q11
+q11 Ak*4_ Ak*44 *rrrr  q11
+q11 Ak*5_ Ak*55 *rrrr  q11
+q11 Ak*6_ Ak*66 *rrrr  q11
+q11 Ak*7_ Ak*77 *rrrr  q11
+q11 Ak*8_ Ak*88 *rrrr  q11
+q11 Ak*9_ Ak*99 *rrrr  q11
+q11 A____ A____ *lll*  q13
+q11 ***** ***** *****  halt-reject
+
+
+
+;; replace Y in first machine with the third tape
+q12 Yk0__ Yk0_0 rrr*r  q12
+q12 Yk1__ Yk1_1 rrr*r  q12
+q12 Yk2__ Yk2_2 rrr*r  q12
+q12 Yk3__ Yk3_3 rrr*r  q12
+q12 Yk4__ Yk4_4 rrr*r  q12
+q12 Yk5__ Yk5_5 rrr*r  q12
+q12 Yk6__ Yk6_6 rrr*r  q12
+q12 Yk7__ Yk7_7 rrr*r  q12
+q12 Yk8__ Yk8_8 rrr*r  q12
+q12 Yk9__ Yk9_9 rrr*r  q12
+
+q12 Ak0__ Ak0_0 *rr*r  q12
+q12 Ak1__ Ak1_1 *rr*r  q12
+q12 Ak2__ Ak2_2 *rr*r  q12
+q12 Ak3__ Ak3_3 *rr*r  q12
+q12 Ak4__ Ak4_4 *rr*r  q12
+q12 Ak5__ Ak5_5 *rr*r  q12
+q12 Ak6__ Ak6_6 *rr*r  q12
+q12 Ak7__ Ak7_7 *rr*r  q12
+q12 Ak8__ Ak8_8 *rr*r  q12
+q12 Ak9__ Ak9_9 *rr*r  q12
+q12 A____ A____ *ll**  q13
+q12 ***** ***** *****  halt-reject
+
+
+;; exit q12 with the right start number
+q13 Ak**_ Ak**_ *lll* q13
+q13 Ak*__ Ak*__ *ll** q13
+q13 A_**_ Ak**_ *lll* q13
+q13 A_0__ A_0__ ***** q10
+q13 A_1__ A_1__ ***** q10
+q13 A____ A____ **r** q13
+q13 ***** ***** ***** halt-reject
+
+
+;; rewind to the start of the output
+q14 __*_$ __*_$ ****l  q14
+q14 __*_0 __*_0 ****l  q14
+q14 __*_1 __*_1 ****l  q14
+q14 __*_2 __*_2 ****l  q14
+q14 __*_3 __*_3 ****l  q14
+q14 __*_4 __*_4 ****l  q14
+q14 __*_5 __*_5 ****l  q14
+q14 __*_6 __*_6 ****l  q14
+q14 __*_7 __*_7 ****l  q14
+q14 __*_8 __*_8 ****l  q14
+q14 __*_9 __*_9 ****l  q14
+q14 __*_A __*_A ****l  q14
+q14 __*_Y __*_Y ****l  q14
+q14 __*_N __*_N ****l  q14
+q14 __*_S __*_S ****l  q14
+q14 __*_R __*_R ****l  q14
+q14 __*_L __*_L ****l  q14
+q14 __*_; __*_; ****l  q14
+q14 __*_Q __*_Q ****l  q14
+q14 __1__ __1__ ****r  halt-accept
+q14 ***** ***** *****  halt-reject
