@@ -31,11 +31,11 @@ Theory of Computation 2020/2021
 
 ## complem.txt
 
-* [x] Feito, falta dúvidas.
+* [x] Feito.
 
 - Temos de verificar input?
 
-- 1 fita (2 fitas?), onde a ultima output: onde está YY* meter NN* e vice versa
+- 2 fitas, onde a ultima output: onde está YY* meter NN* e vice versa.
 
 ### FAQ
 
@@ -53,9 +53,14 @@ Theory of Computation 2020/2021
 
 ## compor.txt
 
+* [x] Feito.
+
 - ***M1$M2*** em que o **$** é só para diferenciar, mas tem de estar na maquina...
+
 - Quando chegar o final:  colocar `;` em vez de **$**
+
 - ver maior estado
+
 - voltar ao inicio
 
 ### FAQ
@@ -79,11 +84,21 @@ output = Q00A1Q00A1L;Q00A0Q10A1S;Q10A1Q10A1L;Q10A0YYYA1S
 
 ## while.txt
 
-- modifica o c?
-- **C==Y**: M
-- **M==Y**: C
+* [ ] Feito - FALTA TESTAR
+
+- ***C$M1*** em que o **$** é só para diferenciar, mas tem de estar na maquina...
+
+- modifica o c? (nope)
+
+- **C==Y**: M_in
+- **C==N**: acc
+- **M==Y**: C_in
 - **M==N**: rej
 
 ## ifthenelse.txt
 
-- Compor + Maquina para o reject
+* [ ] Feito
+
+- ***C$M1$M2*** em que o **$** é só para diferenciar, mas tem de estar na maquina...
+
+- Mesma coisa que while, mas agora com uma 2ºmaquina para a rejeição da condição ***C***
