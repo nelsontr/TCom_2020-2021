@@ -148,6 +148,9 @@ q6  __1_* __0_* r****  q71
 q6  __0_* __0_* r****  q71
 q6  ***** ***** *****  halt-reject
 
+
+;; same as q7, but prepares the third tape to receive a
+;; copy of first state of the first machine
 q71  Q____ Q___Q rr*rr  q71
 q71  Qk___ Qk0_Q *l*r*  q71
 
@@ -165,10 +168,44 @@ q71  9k*__ 9k*__ rr*rr  q71
 q71  Ak*__ Ak*__ *****  q81
 q71  ***** ***** *****  halt-reject
 
-;; put the remaining spaces in output
+;; put the remaining spaces in third tape
+;; (if the first state is small compared to the second machine)
 q81  Ak*__ Ak*__ *r*rr  q81
 q81  A_*__ A_*__ ll**l  q91
 q81  ***** ***** *****  halt-reject
+
+
+;; replace spaces with the correct state
+;; (equal to q9, but it copies to the third tape and to the last one)
+q91  0k*__ 0k*00 ll*ll  q91
+q91  1k*__ 1k*11 ll*ll  q91
+q91  2k*__ 2k*22 ll*ll  q91
+q91  3k*__ 3k*33 ll*ll  q91
+q91  4k*__ 4k*44 ll*ll  q91
+q91  5k*__ 5k*55 ll*ll  q91
+q91  6k*__ 6k*66 ll*ll  q91
+q91  7k*__ 7k*77 ll*ll  q91
+q91  8k*__ 8k*88 ll*ll  q91
+q91  9k*__ 9k*99 ll*ll  q91
+
+q91  0**** 0**** r**rr  q91
+q91  1**** 1**** r**rr  q91
+q91  2**** 2**** r**rr  q91
+q91  3**** 3**** r**rr  q91
+q91  4**** 4**** r**rr  q91
+q91  5**** 5**** r**rr  q91
+q91  6**** 6**** r**rr  q91
+q91  7**** 7**** r**rr  q91
+q91  8**** 8**** r**rr  q91
+q91  9**** 9**** r**rr  q91
+
+q91  Qk0__ Qk000 *l*ll  q91
+q91  Qk1__ Qk111 *l*ll  q91
+q91  Q_*_Q Q_*_Q r***r  q91
+q91  A_*** A_*** ****r  q91
+q91  A_**_ A_**_ ***l*  q10
+q91  ***** ***** *****  halt-reject
+
 
 ;; convert every state in the new number of k
 q7  Q____ Q___Q rr**r  q7
@@ -224,37 +261,6 @@ q9  Q_**Q Q_**Q r***r  q9
 q9  A_*** A_*** ****r  q9
 q9  A_**_ A_**_ *****  q10
 q9  ***** ***** *****  halt-reject
-
-
-;; replace spaces with the correct state
-q91  0k*__ 0k*00 ll*ll  q91
-q91  1k*__ 1k*11 ll*ll  q91
-q91  2k*__ 2k*22 ll*ll  q91
-q91  3k*__ 3k*33 ll*ll  q91
-q91  4k*__ 4k*44 ll*ll  q91
-q91  5k*__ 5k*55 ll*ll  q91
-q91  6k*__ 6k*66 ll*ll  q91
-q91  7k*__ 7k*77 ll*ll  q91
-q91  8k*__ 8k*88 ll*ll  q91
-q91  9k*__ 9k*99 ll*ll  q91
-
-q91  0**** 0**** r**rr  q91
-q91  1**** 1**** r**rr  q91
-q91  2**** 2**** r**rr  q91
-q91  3**** 3**** r**rr  q91
-q91  4**** 4**** r**rr  q91
-q91  5**** 5**** r**rr  q91
-q91  6**** 6**** r**rr  q91
-q91  7**** 7**** r**rr  q91
-q91  8**** 8**** r**rr  q91
-q91  9**** 9**** r**rr  q91
-
-q91  Qk0__ Qk000 *l*ll  q91
-q91  Qk1__ Qk111 *l*ll  q91
-q91  Q_*_Q Q_*_Q r***r  q91
-q91  A_*** A_*** ****r  q91
-q91  A_**_ A_**_ ***l*  q10
-q91  ***** ***** *****  halt-reject
 
 
 ;; skip non state
