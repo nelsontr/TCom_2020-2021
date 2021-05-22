@@ -221,7 +221,7 @@ q10 A_*_ A_*A r**r  q10
 q10 S_*_ S_*S r**r  q10
 q10 L_*_ L_*L r**r  q10
 q10 R_*_ R_*R r**r  q10
-q10 N_*_ N_*N r**r  q11
+q10 N_*_ N_*N *r*r  q11
 
 q10 $_*_ $_1; r**r  q7
 q10 Q_*_ Q_*Q rr*r  q7
@@ -234,12 +234,18 @@ q10 **** **** ****  halt-reject
 
 ;; replace Y in second machine with the third tape
 q11 Yk** Yk*Y *r*r  q11
-q11 Y_** Y_** r***  q11
+q11 Y_** Y_** rl**  q111
 q11 Nk** Nk*N *r*r  q11
-q11 N_** N_** r***  q11
+q11 N_** N_** rl**  q111
 
-q11 A_1_ A_1_ ****  q10
+q11 A_*_ A_*_ ****  q10
 q11 **** **** ****  halt-reject
+
+;; rewind second tape
+q111 Yk** Yk** *l**  q111
+q111 Nk** Nk** *l**  q111
+q111 Y_** Y_** r***  q11
+q111 N_** N_** r***  q11
 
 
 ;; replace Y in first machine with the third tape
