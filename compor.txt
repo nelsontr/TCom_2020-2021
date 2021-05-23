@@ -65,7 +65,7 @@ q3  **** **** ****  halt-reject
 ;; second machine and copies the inicial state
 q4  Q_** Q_** rl**  q4
 q4  A___ A___ **l*  q5
-q4  Ak__ Ak__ ****  q5
+q4  Ak__ Ak__ *l**  q4
 
 q4  0_*_ 0k0_ rlr*  q4
 q4  1_*_ 1k1_ rlr*  q4
@@ -244,8 +244,9 @@ q11 **** **** ****  halt-reject
 ;; rewind second tape
 q111 Yk** Yk** *l**  q111
 q111 Nk** Nk** *l**  q111
-q111 Y_** Y_** r***  q11
-q111 N_** N_** r***  q11
+q111 Y_** Y_** r***  q111
+q111 A_*_ A_*_ ****  q11
+q111 N_** N_** r***  q111
 
 
 ;; replace Y in first machine with the third tape
