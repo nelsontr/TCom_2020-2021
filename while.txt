@@ -65,7 +65,7 @@ q3  ***** ***** *****  halt-reject
 ;; second machine and copies the inicial state
 q4  Q_*** Q_*** rl***  q4
 q4  A____ A____ **l**  q5
-q4  Ak___ Ak___ *****  q5
+q4  Ak___ Ak___ *l***  q4
 
 q4  0_*__ 0k0__ rlr**  q4
 q4  1_*__ 1k1__ rlr**  q4
@@ -203,7 +203,8 @@ q91  Qk0__ Qk000 *l*ll  q91
 q91  Qk1__ Qk111 *l*ll  q91
 q91  Q_*_Q Q_*_Q r***r  q91
 q91  A_*** A_*** ****r  q91
-q91  A_**_ A_**_ ***l*  q10
+q91  A_**_ A_**_ ***l*  q91
+q91  A_*__ A_*__ *****  q10
 q91  ***** ***** *****  halt-reject
 
 
@@ -279,8 +280,8 @@ q10 A_*__ A_*_A r***r  q10
 q10 S_*__ S_*_S r***r  q10
 q10 L_*__ L_*_L r***r  q10
 q10 R_*__ R_*_R r***r  q10
-q10 N_0__ N_0_Y r***r  q10
-q10 N_1__ N_1_N r***r  q10
+q10 N_0__ N_0_* *r***  q101
+q10 N_1__ N_1_* *r***  q101
 
 
 q10 $_*__ $_1_; r***r  q7
@@ -291,6 +292,14 @@ q10 Y_0__ Y_1_Q *r**r  q12
 q10 __1__ __1__ ****l  q14
 q10 ***** ***** *****  halt-reject
 
+
+q101 Nk0__ Nk0_Y *r**r  q101
+q101 Nk1__ Nk1_N *r**r  q101
+q101 N_0__ N_0_Y *ll*r  q101
+q101 N_1__ N_1_N *ll*r  q101
+q101 Nk___ Nk___ *l***  q101
+q101 N____ N____ r****  q101
+q101 A____ A____ **r**  q10
 
 ;; replace Y in second machine with the third tape
 q11 Yk*0_ Yk*00 rrrrr  q11
