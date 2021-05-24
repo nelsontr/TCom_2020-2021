@@ -8,6 +8,20 @@
 ;;  |-Nelson Trindade, ist193743
 
 
+;; -------- Examples: --------
+;; input  | Q0A1Q0A1L;Q0A0YYA1S;Q0A0NNA1S$Q0A1Q0A0R;Q0A1YYA0R;Q0A1NNA0R
+;; output | Q00A1Q00A1L;Q00A0Q10A1S;Q00A0YYYA1S;Q10A1Q10A0R;Q10A1Q00A0R;Q10A1NNNA0R
+;; ---
+;; input  | Q0A1Q0A1L;Q0A0YYA1S;Q0A0NNA1S$Q00A1Q00A0R;Q00A1YYYA0R;Q00A1NNNA0R
+;; output | Q000A1Q000A1L;Q000A0Q100A1S;Q000A0YYYYA1S;Q100A1Q100A0R;Q100A1Q000A0R;Q100A1NNNNA0R
+;; ---
+;; input  | Q00A1Q00A1L;Q00A0YYYA1S;Q00A0NNNA1S$Q0A1Q0A0R;Q0A1YYA0R;Q0A1NNA0R
+;; output | Q000A1Q000A1L;Q000A0Q110A1S;Q000A0YYYYA1S;Q110A1Q110A0R;Q110A1Q000A0R;Q110A1NNNNA0R
+
+
+;; -------- Turing Machine: --------
+
+
 ;; start state
 q0  _____ _____ *****  halt-accept
 q0  Q____ Q____ r****  q1
@@ -350,7 +364,7 @@ q12 Ak6__ Ak6_6 *rr*r  q12
 q12 Ak7__ Ak7_7 *rr*r  q12
 q12 Ak8__ Ak8_8 *rr*r  q12
 q12 Ak9__ Ak9_9 *rr*r  q12
-q12 A____ A____ *ll**  q13
+q12 A____ A____ *ll**  q131
 q12 ***** ***** *****  halt-reject
 
 
@@ -358,11 +372,19 @@ q12 ***** ***** *****  halt-reject
 q13 Ak**_ Ak**_ *lll* q13
 q13 Ak*__ Ak*__ *ll** q13
 q13 A_**_ Ak**_ *lll* q13
-q13 A_0__ A_0__ ***** q10
+q13 A_0__ A_1__ ***** q10
 q13 A_1__ A_1__ ***** q10
 q13 A____ A____ **r** q13
 q13 ***** ***** ***** halt-reject
 
+;; exit q12 with the right start number
+q131 Ak**_ Ak**_ *lll* q131
+q131 Ak*__ Ak*__ *ll** q131
+q131 A_**_ Ak**_ *lll* q131
+q131 A_0__ A_1__ ***** q10
+q131 A_1__ A_0__ ***** q10
+q131 A____ A____ **r** q131
+q131 ***** ***** ***** halt-reject
 
 ;; rewind to the start of the output
 q14 __*_$ __*_$ ****l  q14
