@@ -9,12 +9,15 @@
 ;;
 ;; The ifthenelse.txt machine takes a condition and two turing machines as input,
 ;; separated by $ (C$M1$M2), and returns a turing machine that joins these machines together.
-;; In the first machine, in all places where there is YY ^ k,  we will replace it with the
+;; In the condition, in all places where there is YY ^ k,  we will replace it with the
 ;; initial state of the first machine, and where there is NN ^ k,  we will replace it
-;; with the initial state of the second machine. This can be done in several ways,
-;; the way we adopted was to check the maximum number of k present on both machines
-;; and return an output where you copy the state you see and add the required
-;; number of 0, for the condition, or 1, in case of the first machine, or 2, in case of the second machine.
+;; with the initial state of the second machine.
+;; This solution can be implemented in several ways. The way we chose was to add 
+;; another k to the maximum of k on all turing machines. In this way, we can distinguish
+;; by placing the indicator of the machine. If there are machines with different numbers 
+;; of k's, we will transform the input by placing the rest with the machine identifier 
+;; multiple times, for example: 
+;; Q00A0Q00A1S$Q0A0Q0A1S$Q00A0Q00A1S  ->  Q000A0Q000A1S$Q110A0Q110A1S$Q200A0Q200A1S
 
 
 ;; -------- Examples: --------
