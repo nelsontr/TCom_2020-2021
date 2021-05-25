@@ -84,7 +84,7 @@ output = Q00A1Q00A1L;Q00A0Q10A1S;Q10A1Q10A1L;Q10A0YYYA1S
 
 ## while.txt
 
-* [ ] Feito - FALTA TESTAR
+* [x] Feito
 
 - ***C$M1*** em que o **$** é só para diferenciar, mas tem de estar na maquina...
 
@@ -97,7 +97,7 @@ output = Q00A1Q00A1L;Q00A0Q10A1S;Q10A1Q10A1L;Q10A0YYYA1S
 
 ## ifthenelse.txt
 
-* [ ] Feito
+* [x] Feito
 
 - ***C$M1$M2*** em que o **$** é só para diferenciar, mas tem de estar na maquina...
 
