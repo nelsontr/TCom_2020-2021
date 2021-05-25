@@ -69,12 +69,6 @@ q2  ;___ ;___ r***  q2
 q2  **** **** ****  halt-reject
 
 
-;; rewind second tape
-q3  *___ *___ ****  q4
-q3  *k__ *k__ *l**  q3
-q3  **** **** ****  halt-reject
-
-
 ;; check the number of k's in first state of the
 ;; second machine and copies the inicial state
 q4  Q_** Q_** rl**  q4
