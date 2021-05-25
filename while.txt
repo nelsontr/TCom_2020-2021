@@ -6,6 +6,16 @@
 ;;  |-Beatriz Alves, ist193691
 ;;  |-Matheus Kasai, ist191627
 ;;  |-Nelson Trindade, ist193743
+;;
+;; The while.txt machine takes a condition and a turing machine as input, separated by $
+;; (C$M1), and returns a turing machine that joins these machines together.
+;; In the condition, in all places where there is YY ^ k,  we will replace it with the
+;; initial state of the first machine, and where there is NN ^ k,  we will replace it
+;; with YY ^k. In the first machine, in all places where there is YY ^ k,  we will replace 
+;; it with the initial state of the condition. This can be done in several ways,
+;; the way we adopted was to check the maximum number of k present on both machines
+;; and return an output where you copy the state you see and add the required
+;; number of 0, for the condition, or 1, in case of the first machine.
 
 
 ;; -------- Examples: --------
@@ -67,12 +77,6 @@ q2  R____ R____ r****  q2
 q2  L____ L____ r****  q2
 q2  ;____ ;____ r****  q2
 q2  ***** ***** *****  halt-reject
-
-
-;; rewind second tape
-q3  *____ *____ *****  q4
-q3  *k___ *k___ *l***  q3
-q3  ***** ***** *****  halt-reject
 
 
 ;; check the number of k's in first state of the
@@ -164,7 +168,7 @@ q6  ***** ***** *****  halt-reject
 
 
 ;; same as q7, but prepares the third tape to receive a
-;; copy of first state of the first machine
+;; copy of first state of the condition
 q71  Q____ Q___Q rr*rr  q71
 q71  Qk___ Qk0_Q *l*r*  q71
 
@@ -306,7 +310,7 @@ q10 Y_0__ Y_1_Q *r**r  q12
 q10 __1__ __1__ ****l  q14
 q10 ***** ***** *****  halt-reject
 
-
+;; adding N with the correct number of the new k
 q101 Nk0__ Nk0_Y *r**r  q101
 q101 Nk1__ Nk1_N *r**r  q101
 q101 N_0__ N_0_Y *ll*r  q101
@@ -314,6 +318,7 @@ q101 N_1__ N_1_N *ll*r  q101
 q101 Nk___ Nk___ *l***  q101
 q101 N____ N____ r****  q101
 q101 A____ A____ **r**  q10
+
 
 ;; replace Y in second machine with the third tape
 q11 Yk*0_ Yk*00 rrrrr  q11
@@ -339,7 +344,6 @@ q11 Ak*8_ Ak*88 *rrrr  q11
 q11 Ak*9_ Ak*99 *rrrr  q11
 q11 A____ A____ *lll*  q13
 q11 ***** ***** *****  halt-reject
-
 
 
 ;; replace Y in first machine with the third tape
@@ -385,6 +389,7 @@ q131 A_0__ A_1__ ***** q10
 q131 A_1__ A_0__ ***** q10
 q131 A____ A____ **r** q131
 q131 ***** ***** ***** halt-reject
+
 
 ;; rewind to the start of the output
 q14 __*_$ __*_$ ****l  q14

@@ -6,6 +6,15 @@
 ;;  |-Beatriz Alves, ist193691
 ;;  |-Matheus Kasai, ist191627
 ;;  |-Nelson Trindade, ist193743
+;;
+;; The ifthenelse.txt machine takes a condition and two turing machines as input,
+;; separated by $ (C$M1$M2), and returns a turing machine that joins these machines together.
+;; In the first machine, in all places where there is YY ^ k,  we will replace it with the
+;; initial state of the first machine, and where there is NN ^ k,  we will replace it
+;; with the initial state of the second machine. This can be done in several ways,
+;; the way we adopted was to check the maximum number of k present on both machines
+;; and return an output where you copy the state you see and add the required
+;; number of 0, for the condition, or 1, in case of the first machine, or 2, in case of the second machine.
 
 
 ;; -------- Examples: --------
@@ -29,7 +38,7 @@ q0  ***** ***** *****  halt-reject
 
 
 ;; check the number of k's in first state
-;; of the first machine
+;; of the condition
 q1  0____ 0k___ rr***  q1
 q1  1____ 1k___ rr***  q1
 q1  2____ 2k___ rr***  q1
@@ -45,7 +54,7 @@ q1  A____ A**** r****  q2
 q1  ***** ***** *****  halt-reject
 
 
-;; skip to second machine
+;; skip to first machine
 q2  0____ 0____ r****  q2
 q2  1____ 1____ r****  q2
 q2  2____ 2____ r****  q2
@@ -92,36 +101,8 @@ q21  L____ L____ r****  q21
 q21  ;____ ;____ r****  q21
 q21  ***** ***** *****  halt-reject
 
-q41  Q_*** Q_*** rr***  q41
-q41  A____ A____ *l*l*  q52
-q41  Ak___ Ak___ *r***  q41
-q41  Ak_*_ Ak_*_ *l*l*  q41
-
-q41  0_*__ 0k*0_ rr*r*  q41
-q41  1_*__ 1k*1_ rr*r*  q41
-q41  2_*__ 2k*2_ rr*r*  q41
-q41  3_*__ 3k*3_ rr*r*  q41
-q41  4_*__ 4k*4_ rr*r*  q41
-q41  5_*__ 5k*5_ rr*r*  q41
-q41  6_*__ 6k*6_ rr*r*  q41
-q41  7_*__ 7k*7_ rr*r*  q41
-q41  8_*__ 8k*8_ rr*r*  q41
-q41  9_*__ 9k*9_ rr*r*  q41
-
-q41  0k*__ 0k*0_ rr*r*  q41
-q41  1k*__ 1k*1_ rr*r*  q41
-q41  2k*__ 2k*2_ rr*r*  q41
-q41  3k*__ 3k*3_ rr*r*  q41
-q41  4k*__ 4k*4_ rr*r*  q41
-q41  5k*__ 5k*5_ rr*r*  q41
-q41  6k*__ 6k*6_ rr*r*  q41
-q41  7k*__ 7k*7_ rr*r*  q41
-q41  8k*__ 8k*8_ rr*r*  q41
-q41  9k*__ 9k*9_ rr*r*  q41
-q41  ***** ***** *****  halt-reject
-
 ;; check the number of k's in first state of the
-;; second machine and copies the inicial state
+;; first machine and copies the inicial state
 q4  Q_*** Q_*** rl***  q4
 q4  A____ A____ **l**  q51
 q4  Ak___ Ak___ *l***  q4
@@ -150,11 +131,43 @@ q4  9k___ 9k9__ rlr**  q4
 q4  ***** ***** *****  halt-reject
 
 
-;; rewind to first state of the first machine
+;; check the number of k's in first state of the
+;; second machine and copies the inicial state
+q41  Q_*** Q_*** rr***  q41
+q41  A____ A____ *l*l*  q52
+q41  Ak___ Ak___ *r***  q41
+q41  Ak_*_ Ak_*_ *l*l*  q41
+
+q41  0_*__ 0k*0_ rr*r*  q41
+q41  1_*__ 1k*1_ rr*r*  q41
+q41  2_*__ 2k*2_ rr*r*  q41
+q41  3_*__ 3k*3_ rr*r*  q41
+q41  4_*__ 4k*4_ rr*r*  q41
+q41  5_*__ 5k*5_ rr*r*  q41
+q41  6_*__ 6k*6_ rr*r*  q41
+q41  7_*__ 7k*7_ rr*r*  q41
+q41  8_*__ 8k*8_ rr*r*  q41
+q41  9_*__ 9k*9_ rr*r*  q41
+
+q41  0k*__ 0k*0_ rr*r*  q41
+q41  1k*__ 1k*1_ rr*r*  q41
+q41  2k*__ 2k*2_ rr*r*  q41
+q41  3k*__ 3k*3_ rr*r*  q41
+q41  4k*__ 4k*4_ rr*r*  q41
+q41  5k*__ 5k*5_ rr*r*  q41
+q41  6k*__ 6k*6_ rr*r*  q41
+q41  7k*__ 7k*7_ rr*r*  q41
+q41  8k*__ 8k*8_ rr*r*  q41
+q41  9k*__ 9k*9_ rr*r*  q41
+q41  ***** ***** *****  halt-reject
+
+
+;; rewind second and third tape
 q51  A_*__ A_*__ **l**  q51
 q51  A__*_ A__*_ ***l*  q51
 q51  A____ A____ *****  q21
 
+;; rewind third tape
 q52  Ak___ Ak___ *l***  q52
 q52  Ak_0_ Ak_0_ *l*l*  q52
 q52  Ak_1_ Ak_1_ *l*l*  q52
@@ -169,6 +182,7 @@ q52  Ak_9_ Ak_9_ *l*l*  q52
 q52  A____ A____ *r***  q5
 
 
+;; rewind to first state of the first machine
 q5  Ak___ Ak___ *l***  q5
 q5  $____ $____ l****  q5
 q5  0____ 0____ l****  q5
@@ -257,6 +271,7 @@ q61  ___** ___** **r**  q61
 q61  __1** __0** r****  q7
 q61  __0** __0** r****  q7
 q61  ***** ***** *****  halt-reject
+
 
 ;; convert every state in the new number of k
 q7  Q____ Q___Q rr**r  q7
@@ -363,7 +378,8 @@ q111 A_**_ A_**_ *****  q11
 q111 N_*** N_*** r****  q111
 
 
-;; replace Y in first machine with the third tape
+;; replace N in condition with the forth tape
+;; (initial state of second machine)
 q121 Nk00_ Nk000 rr*rr  q121
 q121 Nk01_ Nk011 rr*rr  q121
 q121 Nk02_ Nk022 rr*rr  q121
@@ -389,7 +405,8 @@ q121 A_0__ A_0__ *l*l*  q13
 q121 ***** ***** *****  halt-reject
 
 
-;; replace Y in first machine with the third tape
+;; replace Y in condition with the third tape
+;; (initial state of first machine)
 q12 Yk0__ Yk0_0 rrr*r  q12
 q12 Yk1__ Yk1_1 rrr*r  q12
 q12 Yk2__ Yk2_2 rrr*r  q12

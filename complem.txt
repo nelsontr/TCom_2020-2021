@@ -6,6 +6,21 @@
 ;;  |-Beatriz Alves, ist193691
 ;;  |-Matheus Kasai, ist191627
 ;;  |-Nelson Trindade, ist193743
+;;
+;; The complem.txt machine takes a turing machine as an input and 
+;; returns the complement of that same machine, that is, in all places 
+;; where there is YY^k we will replace it with NN^k.
+
+
+;; -------- Examples: --------
+;; input  | Q0A1Q0A1L;Q0A0YYA1S;Q0A0NNA1S
+;; output | Q0A1Q0A1L;Q0A0NNA1S;Q0A0YYA1S
+;; ---
+;; input  | Q0A1Q0A1L;Q0A0YYA1S;Q0A1Q0A1L
+;; output | Q0A1Q0A1L;Q0A0NNA1S;Q0A1Q0A1L
+;; ---
+;; input  | Q00A1NNNA1L;Q00A0YYYA1S;Q00A0NNNA1S
+;; output | Q00A1YYYA1L;Q00A0NNNA1S;Q00A0YYYA1S
 
 
 ;; start state
@@ -99,7 +114,7 @@ q5  *** *** *** halt-reject
 
 ;; check if there are more states
 q6  ;__ ;_; rlr q7
-q6  ___ ___ *** halt-accept
+q6  ___ ___ **l q10
 q6  *** *** *** halt-reject
 
 
@@ -145,3 +160,27 @@ q9  Q__ Q__ *l* q3
 q9  Y__ Y__ *l* q3
 q9  N__ N__ *l* q3
 q9  *** *** *** halt-reject
+
+
+;; rewind to the start of the output
+q10 __$ __$ **l  q10
+q10 __0 __0 **l  q10
+q10 __1 __1 **l  q10
+q10 __2 __2 **l  q10
+q10 __3 __3 **l  q10
+q10 __4 __4 **l  q10
+q10 __5 __5 **l  q10
+q10 __6 __6 **l  q10
+q10 __7 __7 **l  q10
+q10 __8 __8 **l  q10
+q10 __9 __9 **l  q10
+q10 __A __A **l  q10
+q10 __Y __Y **l  q10
+q10 __N __N **l  q10
+q10 __S __S **l  q10
+q10 __R __R **l  q10
+q10 __L __L **l  q10
+q10 __; __; **l  q10
+q10 __Q __Q **l  q10
+q10 ___ ___ **r  halt-accept
+q10 *** *** ***  halt-reject
