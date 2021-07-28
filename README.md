@@ -1,6 +1,6 @@
 <a href="http://fenix.tecnico.ulisboa.pt"><img align="right" src="https://fenix.tecnico.ulisboa.pt/api/bennu-portal/configuration/logo" alt="Fenix Tecnico"></a>
 
-# TCOM_20-21
+# TCOM_2020-2021
 
 Theory of Computation 2020/2021
 
@@ -20,14 +20,17 @@ Theory of Computation 2020/2021
 ### Grade
 | Solution          | Grade 		  |
 | :-----------------| :-----------------: |
-| *MT* **Complementar** | *00.0* / 0.50 |
-| *MT* **Função** | *00.0* / 1.00 |
-|	*MT* **While**	| *00.0* / 1.00  |
-|	*MT* **IfThenElse** | *00.0* / 1.50  |
+| *MT* **Complementar** | *0.50* / 0.50 |
+| *MT* **Função** | *1.00* / 1.00 |
+|	*MT* **While**	| *1.00* / 1.00  |
+|	*MT* **IfThenElse** | *1.50* / 1.50  |
 
 
 
 # Notas Práticas
+
+<details>
+<summary><b>Notas Práticas</b></summary>
 
 ## complem.txt
 
@@ -102,3 +105,5 @@ output = Q00A1Q00A1L;Q00A0Q10A1S;Q10A1Q10A1L;Q10A0YYYA1S
 - ***C$M1$M2*** em que o **$** é só para diferenciar, mas tem de estar na maquina...
 
 - Mesma coisa que while, mas agora com uma 2ºmaquina para a rejeição da condição ***C***
+
+</details>
